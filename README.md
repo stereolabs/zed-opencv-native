@@ -2,6 +2,8 @@
 
 This sample shows how to capture rectified images with the ZED or ZED-M Camera and OpenCV, without the ZED SDK.
 
+If you want to use OpenCV with the ZED SDK features, check our sample [here](https://github.com/stereolabs/zed-opencv).
+
 ## OS
 
 - Windows, Linux, MacOS
