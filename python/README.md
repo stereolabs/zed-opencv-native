@@ -6,15 +6,20 @@ If you want to use OpenCV with the ZED SDK features, check our sample [here](htt
 
 ## OS
 
-- Windows, Linux, MacOS
+- Linux, Windows, MacOS
 
-### How to use in C++
+## Requirements
 
-Please refer to instructions in [cpp folder](./cpp)
+Python modules :
 
-### How to use in Python
+- numpy
+- cv2
+- wget
+- configparser
 
-Please refer to instructions in [python folder](./python)
+## Run the program
+
+      python3 zed-opencv-native.py <camera_serial_number>
 
 ## Notes
 
