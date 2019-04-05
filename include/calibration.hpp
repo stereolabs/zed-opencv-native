@@ -2175,6 +2175,7 @@ CSimpleIniTempl<SI_CHAR, SI_STRLESS, SI_CONVERTER>::GetAllKeys(
     return true;
 }
 
+#if 0
 template<class SI_CHAR, class SI_STRLESS, class SI_CONVERTER>
 SI_Error
 CSimpleIniTempl<SI_CHAR, SI_STRLESS, SI_CONVERTER>::SaveFile(
@@ -2354,6 +2355,8 @@ CSimpleIniTempl<SI_CHAR, SI_STRLESS, SI_CONVERTER>::Save(
 
     return SI_OK;
 }
+
+#endif
 
 template<class SI_CHAR, class SI_STRLESS, class SI_CONVERTER>
 bool
@@ -4018,7 +4021,7 @@ public:
     }
 
     ~ConfManager() {
-        if (is_opened_) ini_.SaveFile(filename_.c_str());
+        //if (is_opened_) ini_.SaveFile(filename_.c_str());
     }
 
     float getValue(std::string key, float default_value = -1) {
