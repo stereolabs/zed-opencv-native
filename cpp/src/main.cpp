@@ -74,8 +74,8 @@ int main(int argc, char** argv) {
         return -1;
     cap.grab();
     // Set the video resolution (2*Width * Height)
-    cap.set(CV_CAP_PROP_FRAME_WIDTH, image_size.width * 2);
-    cap.set(CV_CAP_PROP_FRAME_HEIGHT, image_size.height);
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, image_size.width * 2);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, image_size.height);
     cap.grab();
 
     Mat frame, left_raw, left_rect, right_raw, right_rect;
