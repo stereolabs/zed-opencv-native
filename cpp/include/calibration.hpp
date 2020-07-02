@@ -18,7 +18,11 @@
 #pragma comment(lib, "urlmon.lib")
 #else
 #include <unistd.h>
-#include <sys/vfs.h>
+#ifdef __APPLE__
+#include<sys/mount.h>
+#else
+#include<sys/vfs.h>
+#endif
 #endif
 
 
