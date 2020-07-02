@@ -4093,7 +4093,9 @@ static inline std::string getRootHiddenDir() {
     std::string filename(snfile_path);
     filename += "\\Stereolabs\\";
 #elif __APPLE__
-    std::string filename = "~/Library/ZED/";
+    std::string homeDir (std::getenv("HOME"));
+    std::string appendix ("/Library/Application Support/ZED/");
+    std::string filename = homeDir + appendix;
 #else //LINUX
     std::string filename = "/usr/local/zed/";
 #endif
@@ -4120,14 +4122,14 @@ bool downloadCalibrationFile(unsigned int serial_number, std::string &calibratio
     calibration_file = path + specific_name;
     if (!checkFile(calibration_file)) {
         // Download the file
-        std::string url("'http://calib.stereolabs.com/?SN=");
+        std::string url("http://calib.stereolabs.com/?SN=");
         std::string cmd;
-        cmd = "mkdir -p " + path + " && wget " + url + std::to_string(serial_number) + "' -O " + calibration_file;
+        cmd = "mkdir -p \"" + path + "\" && wget \"" + url + std::to_string(serial_number) + "\" -O \"" + calibration_file + "\"";
         std::cout << cmd << std::endl;
         system(cmd.c_str());
 
         if (!checkFile(calibration_file)) {
-            std::cout << "Invalid calibration file" << std::endl;
+            std::cout << "Invalid calibration file " << calibration_file << std::endl;
             return 1;
         }
     }
