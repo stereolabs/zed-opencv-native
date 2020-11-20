@@ -19,3 +19,6 @@ Please refer to instructions in [python folder](./python)
 ## Notes
 
 - You need to know the serial number of the camera you are trying to open. To do so, you can use ZED Explorer tools (ZED SDK tools) and check the serial number on the top right of ZED Explorer window.
+
+## Support
+If you need assistance go to our Community site at https://community.stereolabs.com/
