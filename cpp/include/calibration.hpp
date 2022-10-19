@@ -4206,8 +4206,8 @@ bool initCalibration(std::string calibration_file, cv::Size2i image_size, cv::Ma
     // Get translations
     float T_[3];
     T_[0] = camerareader.getValue("stereo:baseline", 0.0f);
-    T_[1] = camerareader.getValue("stereo:ty_" + resolution_str, 0.f);
-    T_[2] = camerareader.getValue("stereo:tz_" + resolution_str, 0.f);
+    T_[1] = camerareader.getValue("stereo:ty", 0.f);
+    T_[2] = camerareader.getValue("stereo:tz", 0.f);
 
     // Get left parameters
     float left_cam_cx = camerareader.getValue("left_cam_" + resolution_str + ":cx", 0.0f);
