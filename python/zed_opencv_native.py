@@ -71,8 +71,8 @@ def init_calibration(calibration_file, image_size) :
         check_data = False
 
     T_ = np.array([-float(config['STEREO']['Baseline'] if 'Baseline' in config['STEREO'] else 0),
-                   float(config['STEREO']['TY_'+resolution_str] if 'TY_'+resolution_str in config['STEREO'] else 0),
-                   float(config['STEREO']['TZ_'+resolution_str] if 'TZ_'+resolution_str in config['STEREO'] else 0)])
+                   float(config['STEREO']['TY'] if 'TY' in config['STEREO'] else 0),
+                   float(config['STEREO']['TZ'] if 'TZ' in config['STEREO'] else 0)])
 
 
     left_cam_cx = float(config['LEFT_CAM_'+resolution_str]['cx'] if 'cx' in config['LEFT_CAM_'+resolution_str] else 0)
